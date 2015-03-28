@@ -360,6 +360,22 @@
                 </Arg>
             </Call>
 
+            <!-- ======================================== -->
+            <!--      Unrestricted OPTIONS operations     -->
+            <!-- ======================================== -->
+            <Call name="addConstraintMapping">
+                <Arg>
+                    <New class="org.eclipse.jetty.security.ConstraintMapping">
+                        <Set name="method">OPTIONS</Set>
+                        <Set name="pathSpec">
+                            *
+                        </Set>
+                        <Set name="constraint">
+                            <Ref id="NoneSecurityConstraint"/>
+                        </Set>
+                    </New>
+                </Arg>
+            </Call>
 
             <!-- ======================================== -->
             <!--         Prohibit everything else         -->
